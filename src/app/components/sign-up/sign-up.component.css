@@ -27,3 +27,8 @@ form {
   box-sizing: border-box;
   margin: 0px 20px 0px 20px;
 }
+
+.input-field {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}

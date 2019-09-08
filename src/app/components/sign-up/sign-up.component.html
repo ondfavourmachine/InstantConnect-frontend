@@ -2,23 +2,40 @@
   <div class="row">
     <div class="col s10 offset-s1" id="panel">
       <h3 id="title">Sign Up</h3>
-
+      <div id="errorMsg" *ngIf="errorMsg">
+        <span>{{ errorMsg }}</span>
+      </div>
+      <div class="progress" *ngIf="spinner">
+        <div class="indeterminate"></div>
+      </div>
       <form class="col s12" [formGroup]="signupForm" (ngSubmit)="signUp()">
         <div class="row">
           <div class="input-field col s12">
             <input placeholder="Enter your username" type="text" formControlName="username" />
             <label for="first_name">Username</label>
+            <div *ngIf="username.touched && username.invalid" class="ng-invalid ng-touched">
+              <small style="color: #f10b0b9d;" *ngIf="requiredUsername()"> Your Username is required!</small>
+              <!-- <small style="color: #f10b0b9d;" *ngIf='emailNotValid()'> Your Email is not a valid email address!</small> -->
+            </div>
           </div>
           <div class="input-field col s12">
             <input type="email" formControlName="email" />
             <label for="last_name">Email</label>
+            <div *ngIf="email.touched && email.invalid" class="ng-invalid ng-touched">
+              <small style="color: #f10b0b9d;" *ngIf="requiredEmail()"> Your Email is required!</small>
+              <small style="color: #f10b0b9d;" *ngIf="emailNotValid()"> Your Email is not a valid email address!</small>
+            </div>
           </div>
           <div class="input-field col s12">
             <input type="password" formControlName="password" />
             <label for="last_name">Password</label>
+
+            <div *ngIf="password.touched && password.invalid" class="ng-invalid ng-touched">
+              <small style="color: #f10b0b9d;" *ngIf="requiredPassword()"> Your password is required!</small>
+            </div>
           </div>
         </div>
-        <button class="btn waves-effect" type="submit" id="signupbtn">
+        <button [disabled]="!signupForm.valid" class="btn waves-effect" type="submit" id="signupbtn">
           Sign up
         </button>
       </form>

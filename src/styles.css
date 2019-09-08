@@ -7,3 +7,19 @@
 #auth-content {
   min-height: 465px !important;
 }
+
+.indeterminate {
+  background-color: orange !important;
+}
+
+#errorMsg {
+  background: tomato;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -12px;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,11 @@
+a {
+  color: black;
+}
+
+.active a {
+  color: #fff;
+}
+
+.active {
+  background-color: orange;
+}

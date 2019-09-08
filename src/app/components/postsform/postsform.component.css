@@ -1,0 +1,35 @@
+.postDiv {
+  background-color: rgb(255, 230, 184);
+}
+
+form {
+  background-color: #fff;
+}
+
+.formDiv {
+  margin: 0px 20px 0px 20px;
+}
+
+.addImageBtn {
+  margin-bottom: 5px;
+}
+
+.postBtn {
+  float: right;
+  margin-bottom: 5px;
+}
+
+.file-field input[type='file'] {
+  width: 70% !important;
+}
+
+div.btn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  background-color: rgb(228, 164, 44);
+}
+
+.postBtn {
+  background-color: rgb(228, 164, 44);
+}
