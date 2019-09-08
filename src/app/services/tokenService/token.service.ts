@@ -18,4 +18,15 @@ export class TokenService {
   deleteToken(): void {
     this.cs.delete('chat_token');
   }
+
+  getPayload(): Object {
+    const token: string = this.getToken();
+    let payload;
+    if (token) {
+      payload = token.split('.')[1];
+      payload = JSON.parse(atob(payload));
+    }
+
+    return payload.data;
+  }
 }

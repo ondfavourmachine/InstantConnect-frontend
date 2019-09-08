@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  user: Object;
   constructor(private tokenservice: TokenService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.user = this.tokenservice.getPayload();
+    // console.log(this.user);
+  }
 
   logout() {
     this.tokenservice.deleteToken();
